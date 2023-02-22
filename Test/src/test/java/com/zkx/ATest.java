@@ -15,5 +15,6 @@ public class ATest {
         System.out.println(1);
         System.out.println("master1");
         System.out.println("b1");
+        System.out.println(13);
     }
 }
