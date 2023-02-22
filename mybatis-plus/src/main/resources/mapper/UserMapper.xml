@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zkx.mapper.UserMapper">
+    <select id="selectMapById" resultType="map">
+    select * from t_user where uid = #{id}
+    </select>
+    <!--使用了分页插件之后不用自己写limit,sql不能用;结尾，会与分页插件冲突-->
+    <select id="selectPageVo" resultType="User">
+    select * from t_user where age > #{age}
+    </select>
+    <insert id="insertSelective">
+        insert into t_user
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="uid != null">,</if>
+            <if test="userName != null">user_name,</if>
+            <if test="age != null">age,</if>
+            <if test="email != null">email,</if>
+            <if test="sex != null">sex,</if>
+            <if test="isDeleted != null">is_deleted,</if>
+        </trim>
+        values
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="uid != null">#{uid,jdbcType=NUMERIC},</if>
+            <if test="userName != null">#{userName,jdbcType=VARCHAR},</if>
+            <if test="age != null">#{age,jdbcType=NUMERIC},</if>
+            <if test="email != null">#{email,jdbcType=VARCHAR},</if>
+            <if test="sex != null">#{sex,jdbcType=NUMERIC},</if>
+            <if test="isDeleted != null">#{isDeleted,jdbcType=NUMERIC},</if>
+        </trim>
+    </insert>
+
+
+</mapper>

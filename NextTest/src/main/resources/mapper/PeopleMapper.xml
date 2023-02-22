@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zkx.mapper.PeopleMapper">
+    <select id="selectByIdAndAge" resultType="People">
+        select * from table_people where pid = #{id} and age = #{age}
+    </select>
+    <select id="selectByAgePage" resultType="People">
+        select * from table_people order by age asc
+    </select>
+</mapper>
+
+        <!--
+        <!-PageHelper依赖->
+        <dependency>
+            <groupId>com.github.pagehelper</groupId>
+            <artifactId>pagehelper</artifactId>
+            <version>5.3.0</version>
+        </dependency>
+        <!-mybatis依赖->
+        <dependency>
+            <groupId>org.mybatis</groupId>
+            <artifactId>mybatis</artifactId>
+            <version>3.5.7</version>
+        </dependency>
+        <!-mysql驱动->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>8.0.27</version>
+        </dependency>
+        
+        <resources>
+            <resource>
+                <directory>src/main/java</directory><!-所在的目录->
+                <includes><!-包括目录下的.properties,.xml 文件都会扫描到->
+                    <include>**/*.properties</include>
+                    <include>**/*.xml</include>
+                </includes>
+                <filtering>false</filtering>
+            </resource>
+            <resource>
+                <directory>src/main/resources</directory>
+            </resource>
+        </resources>
+        
+        -->

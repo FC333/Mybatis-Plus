@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zkx.mapper.StudentMapper">
+    <select id="selectByNameAndAge" resultType="Student">
+        select * from t_student where s_name = #{b_name} and age = #{b_age}
+    </select>
+    <select id="selectVoByIdPage" resultType="Student">
+        select * from t_student where age > #{age} order by sid asc
+    </select>
+</mapper>

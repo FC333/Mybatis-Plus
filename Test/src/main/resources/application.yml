@@ -1,0 +1,18 @@
+spring:
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/MP2?characterEncoding=utf-8&userSSL=false&serverTimezone=UTC
+    hikari:
+      username: "root"
+      password: "0505"
+
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  global-config:
+    db-config:
+      table-prefix: t_
+      id-type: auto
+  type-aliases-package: com.zkx.vo
+  type-enums-package: com.zkx.enums
