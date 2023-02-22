@@ -14,5 +14,6 @@ public class ATest {
     public void testA() {
         System.out.println(1);
         System.out.println("b1");
+        System.out.println(2);
     }
 }
