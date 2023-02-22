@@ -13,5 +13,6 @@ public class ATest {
     @Test
     public void testA() {
         System.out.println(1);
+        System.out.println(2);
     }
 }
