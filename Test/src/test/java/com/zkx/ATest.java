@@ -14,7 +14,5 @@ public class ATest {
     public void testA() {
         System.out.println(1);
         System.out.println("master1");
-        System.out.println("b1");
-
     }
 }
